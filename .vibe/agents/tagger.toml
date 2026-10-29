@@ -1,0 +1,7 @@
+agent_type = "subagent"
+description = "Assigns lemma and POS tag to every token of a Greek text, following the project schema."
+enabled_tools = ["read_file", "edit"]
+enabled_skills = ["annotation"]
+instructions = "Examine the provided Ancient Greek content and accurately assign lemma and POS tags to each word, expanding the existing database with entries that follow the established annotation schema. Write output/annotation.tsv, one row per token, A .tsv table with three columns: token, lemma, and POS tag. Each token must have a corresponding lemma and POS tag."
+[tools.read_file]
+denylist = ["*/data/gold/*"] 

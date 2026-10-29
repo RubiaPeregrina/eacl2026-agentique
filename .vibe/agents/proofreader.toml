@@ -1,0 +1,9 @@
+agent_type = "subagent"
+description = "Read-only reviewer of output/annotation.tsv. Checks completeness, tagset and plausibility, returns a report."
+enabled_tools = ["write_file", "edit]
+enabled_skills = ["annotation"]
+instructions = "You never modify files. Check: every input token has exactly one row, in order;
+every tag belongs to data/tagsets/GRC_tagset.txt; (4) lemma and POS are plausible in context; (5) the same form is annotated
+consistently. Reply with : errors' lines and problems"
+[tools.read_file]
+denylist = ["*/data/gold/*"] 
